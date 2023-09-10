@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/06/25 18:09:11 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/10 21:46:41 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INCFT) -Iinclude -g
 LFLAGS = -L$(LIBFT) -lft #-fsanitize=address
 RM = rm -rf
-SRC = $(addprefix src/, push_swap.c)
+SRC = $(addprefix src/, push_swap.c\
+	lst_aux.c)
 OBJ = $(SRC:src/%c=bin/%o)
 
 all: $(LIBFT) $(BIN) $(NAME)
