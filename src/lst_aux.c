@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/10 22:29:48 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/12 00:55:43 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ps_lstadd_back(t_stack *stack, int new_val)
 {
-	t_list	*new;
+	t_node	*new;
 
-	new = ft_calloc(1, sizeof(t_list));
-	new->value = new_val;
+	new = ft_calloc(1, sizeof(t_node));
+	new->data = new_val;
 	if (!stack->head_a)
 	{
 		stack->head_a = new;
@@ -32,16 +32,28 @@ void	ps_lstadd_back(t_stack *stack, int new_val)
 	}
 }
 
-void	ps_printlst(t_list *head)
+void	print_lst(t_node *head)
 {
-	t_list	*current;
+	t_node	*current;
 
 	current = head;
 	ft_printf("Stack A\n");
 	while (current)
 	{
-		ft_printf("   %d\n", current->value);
+		ft_printf("   %d\n", current->data);
 		current = current->next;
 	}
 	ft_printf("\n");
+}
+
+void	free_lst(t_node *head)
+{
+	t_node	*temp;
+
+	while (head)
+	{
+		temp = head->next;
+		free(head);
+		head = temp;
+	}
 }

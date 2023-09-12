@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 20:48:16 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/10 20:05:45 by jnuncio-         ###   ########.fr       */
+/*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
+/*   Updated: 2023/09/12 01:03:40 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int	main(int ac, char **av)
 {
-	t_list	**ptr;
+	static t_stack	*stack;
+	int				i;
 
-	ptr = lst;
-	while (*ptr)
-		ptr = &(*ptr)->next;
-	*ptr = new;
+	i = 1;
+	if (ac < 2)
+		return (0);
+	init_stack(stack, (ac - 1));
+	while (i < ac)
+	{
+		check_input(av[i], stack);
+		i++;
+	}
+	print_lst(stack->head_a);
+	return (0);
 }
