@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/09/12 00:42:25 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/12 21:46:32 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ LIBFT = libft/
 LIBFT_BIN = libft/libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INCFT) -Iinclude -g
-LFLAGS = -L$(LIBFT) -lft -fsanitize=address
+LFLAGS = -L$(LIBFT) -lft #-fsanitize=address
 RM = rm -rf
 SRC = $(addprefix src/, main.c\
 	lst_aux.c\

@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/12 01:03:40 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:57:03 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 int	main(int ac, char **av)
 {
-	static t_stack	*stack;
+	static t_stack	stack;
 	int				i;
 
 	i = 1;
 	if (ac < 2)
 		return (0);
-	init_stack(stack, (ac - 1));
 	while (i < ac)
 	{
-		check_input(av[i], stack);
+		check_input(av[i], &stack);
 		i++;
 	}
-	print_lst(stack->head_a);
+	print_lst(stack.head_a);
 	return (0);
 }

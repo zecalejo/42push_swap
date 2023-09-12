@@ -6,13 +6,13 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/12 00:55:43 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/12 21:57:51 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_lstadd_back(t_stack *stack, int new_val)
+void	ps_create_stack(t_stack *stack, int new_val)
 {
 	t_node	*new;
 
@@ -22,7 +22,6 @@ void	ps_lstadd_back(t_stack *stack, int new_val)
 	{
 		stack->head_a = new;
 		stack->tail_a = new;
-		return ;
 	}
 	else
 	{
