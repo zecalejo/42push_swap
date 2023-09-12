@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/09/12 21:46:32 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/12 22:16:33 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ BIN	= bin
 INCFT = libft/include
 LIBFT = libft/
 LIBFT_BIN = libft/libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror -I$(INCFT) -Iinclude -g
 LFLAGS = -L$(LIBFT) -lft #-fsanitize=address
 RM = rm -rf
