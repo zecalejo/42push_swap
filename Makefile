@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/09/12 22:16:33 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/12 23:45:06 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ LFLAGS = -L$(LIBFT) -lft #-fsanitize=address
 RM = rm -rf
 SRC = $(addprefix src/, main.c\
 	lst_aux.c\
-	checks.c)
+	checks.c\
+	utils.c)
 OBJ = $(SRC:src/%c=bin/%o)
 
 all: $(LIBFT) $(BIN) $(NAME)

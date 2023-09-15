@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/15 01:20:55 by jnuncio-         ###   ########.fr       */
+/*   Created: 2023/09/12 23:02:05 by jnuncio-          #+#    #+#             */
+/*   Updated: 2023/09/12 23:36:07 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int ac, char **av)
+void	error_exit(t_stack *stack)
 {
-	static t_stack	stack;
-	int				i;
-
-	i = 1;
-	if (ac < 2)
-		return (0);
-	while (i < ac)
-	{
-		check_input(av[i], &stack);
-		i++;
-	}
-	print_lst(stack.head_a);
-	return (0);
+	ft_putstr_fd("Error\n", 2);
+	if (stack->head_a)
+		free_lst(stack->head_a);
+	if (stack->head_b)
+		free_lst(stack->head_b);
+	exit(1);
 }

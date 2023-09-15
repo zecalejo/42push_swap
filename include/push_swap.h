@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/12 20:33:20 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/15 01:26:35 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,12 @@ typedef struct s_stack {
 	t_node	*tail_b;
 }	t_stack;
 
-void	ps_create_stack(t_stack *stack, int new_val);
+void	create_stack_a(t_stack *stack, int new_val);
 void	print_lst(t_node *head);
+void	free_lst(t_node *head);
 void	check_input(char *str, t_stack *stack);
+void	error_exit(t_stack *stack);
+
+int		check_error(t_stack *stack, long int nbr);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/12 21:57:51 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/15 00:44:58 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ps_create_stack(t_stack *stack, int new_val)
+void	create_stack_a(t_stack *stack, int new_val)
 {
 	t_node	*new;
 
@@ -42,7 +42,6 @@ void	print_lst(t_node *head)
 		ft_printf("   %d\n", current->data);
 		current = current->next;
 	}
-	ft_printf("\n");
 }
 
 void	free_lst(t_node *head)
