@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/15 01:26:13 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/19 01:46:55 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,45 @@
 
 void	check_input(char *str, t_stack *stack)
 {
-	long int	sign;
-	long int	nbr;
-
-	sign = 1;
+	stack->sign = 1;
 	while (*str)
 	{
-		nbr = 0;
+		stack->nbr = 0;
+		stack->cnt = 0;
 		if ((*str >= 9 && *str <= 13) || *str == 32 || *str == '+')
-			str++;
+			stack->sign = 1;
 		else if (*str == '-')
-		{
-			sign *= -1;
-			str++;
-		}
+			stack->sign = -1;
 		else if (*str >= '0' && *str <= '9')
 		{
 			while (*str >= '0' && *str <= '9')
-				nbr = (nbr * 10) + (*str++ - '0');
-			if (check_error(stack, (nbr * sign)))
+			{
+				stack->nbr = (stack->nbr * 10) + (*str++ - '0');
+				stack->cnt++;
+			}
+			if (check_error(stack))
 				error_exit(stack);
-			create_stack_a(stack, (nbr * sign));
+			create_stack(stack, (stack->nbr * stack->sign));
+			str--;
 		}
 		else
 			error_exit(stack);
+		str++;
 	}
 }
 
-int	check_error(t_stack *stack, long int nbr)
+int	check_error(t_stack *stack)
 {
 	t_node	*current;
 
 	if (!stack->head_a)
 		return (0);
-	if (nbr > INT_MAX || nbr < INT_MIN)
+	if (stack->nbr > INT_MAX || stack->nbr < INT_MIN || stack->cnt > 10) 
 		return (1);
 	current = stack->head_a;
 	while (current != NULL)
 	{
-		if (current->data == nbr)
+		if (current->data == stack->nbr)
 			return (1);
 		current = current->next;
 	}

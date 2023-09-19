@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/15 01:20:55 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/19 01:50:55 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@ int	main(int ac, char **av)
 		check_input(av[i], &stack);
 		i++;
 	}
-	print_lst(stack.head_a);
+	print_lst(stack.head_a, "Stack A");
+	print_lst(stack.head_b, "Stack B");
+	// pb(&stack);
+	// print_lst(stack.head_a, "Stack A");
+	// print_lst(stack.head_b, "Stack B");
+	// pa(&stack);
+	// print_lst(stack.head_a, "Stack A");
+	// print_lst(stack.head_b, "Stack B");
+	free_lst(stack.head_a);
+	free_lst(stack.head_b);
 	return (0);
 }
