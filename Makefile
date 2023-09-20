@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/09/18 23:05:54 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/19 23:20:21 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRC = $(addprefix src/, main.c\
 	lst_aux.c\
 	checks.c\
 	utils.c\
-	moves.c)
+	moves1.c\
+	moves2.c)
 OBJ = $(SRC:src/%c=bin/%o)
 
 all: $(LIBFT) $(BIN) $(NAME)

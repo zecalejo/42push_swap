@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/19 01:46:55 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/20 00:51:46 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ void	check_input(char *str, t_stack *stack)
 	{
 		stack->nbr = 0;
 		stack->cnt = 0;
-		if ((*str >= 9 && *str <= 13) || *str == 32 || *str == '+')
-			stack->sign = 1;
-		else if (*str == '-')
-			stack->sign = -1;
+		if ((*str >= 9 && *str <= 13) || *str == 32 || *str == '-' || *str == '+')
+			check_sign(stack, str);
 		else if (*str >= '0' && *str <= '9')
 		{
 			while (*str >= '0' && *str <= '9')
@@ -38,6 +36,21 @@ void	check_input(char *str, t_stack *stack)
 		else
 			error_exit(stack);
 		str++;
+	}
+}
+
+void	check_sign(t_stack *stack, char *str)
+{
+	if (!str)
+		return ;
+	stack->sign = 1;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			stack->sign = -1;
+		str++;
+		if (!(*str >= '0' && *str <= '9'))
+			error_exit(stack);
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/19 01:50:55 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/20 02:43:37 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,16 @@ int	main(int ac, char **av)
 	}
 	print_lst(stack.head_a, "Stack A");
 	print_lst(stack.head_b, "Stack B");
-	// pb(&stack);
-	// print_lst(stack.head_a, "Stack A");
-	// print_lst(stack.head_b, "Stack B");
-	// pa(&stack);
-	// print_lst(stack.head_a, "Stack A");
-	// print_lst(stack.head_b, "Stack B");
+	pb(&stack);
+	pb(&stack);
+	print_lst(stack.head_a, "Stack A");
+	print_lst(stack.head_b, "Stack B");
+	sa_sb(stack.head_a, 'a');
+	print_lst(stack.head_a, "Stack A");
+	print_lst(stack.head_b, "Stack B");
+	sa_sb(stack.head_b, 'b');
+	print_lst(stack.head_a, "Stack A");
+	print_lst(stack.head_b, "Stack B");
 	free_lst(stack.head_a);
 	free_lst(stack.head_b);
 	return (0);
