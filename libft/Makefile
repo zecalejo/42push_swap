@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/16 15:39:50 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/06/14 19:09:55 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/09/20 21:44:36 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = ft_isalpha.c\
 	ft_isalnum.c\
 	ft_isascii.c\
 	ft_isprint.c\
+	ft_isspace.c\
 	ft_strlen.c\
 	ft_strlcpy.c\
 	ft_strlcat.c\

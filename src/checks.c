@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/20 00:51:46 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/20 23:39:17 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	check_input(char *str, t_stack *stack)
 	{
 		stack->nbr = 0;
 		stack->cnt = 0;
-		if ((*str >= 9 && *str <= 13) || *str == 32 || *str == '-' || *str == '+')
+		if (ft_isspace(*str) || *str == '-' || *str == '+')
 			check_sign(stack, str);
 		else if (*str >= '0' && *str <= '9')
 		{
