@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/23 23:28:23 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/24 01:13:47 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	pb(t_stack *stack);
 void	pa(t_stack *stack);
 void	ra_rb(t_node **head, char flag);
 void	rr(t_stack *stack);
-void	rra_rrb(t_node *head, char flag);
+void	rra_rrb(t_node **head, char flag);
 void	rrr(t_stack *stack);
 
 int		check_error(t_stack *stack);
