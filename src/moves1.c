@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 23:05:11 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 00:57:21 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/24 01:10:36 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	pa(t_stack *stack)
 	if (stack->head_b)
 	{
 		temp = stack->head_b;
-		if (!stack->head_b->next)
+		if (stack->head_b->next == stack->head_b)
 			stack->head_b = NULL;
 		else
 		{
@@ -50,12 +50,12 @@ void	pa(t_stack *stack)
 			stack->head_b->prev->next = stack->head_b;
 
 		}
+		if (!stack->head_a)
+			stack->head_a = temp;
 		temp->next = stack->head_a;
-		if (stack->head_a)
-		{
-			temp->prev = stack->head_a->prev;
-			stack->head_a->prev->next = temp;
-		}
+		stack->head_a->prev->next = temp;
+		temp->prev = stack->head_a->prev;
+		temp->next->prev = temp;
 		stack->head_a = temp;
 		ft_putstr_fd("pa\n", 1);
 	}
@@ -68,7 +68,7 @@ void	pb(t_stack *stack)
 	if (stack->head_a)
 	{
 		temp = stack->head_a;
-		if (!stack->head_a->next)
+		if (stack->head_a->next == stack->head_a)
 			stack->head_a = NULL;
 		else
 		{
