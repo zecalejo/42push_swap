@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 23:05:11 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/21 01:45:02 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/24 00:57:21 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	sa_sb(t_node *lst, char flag)
 {
 	int	temp;
-	
+
 	if (lst && lst->next)
 	{
 		temp = lst->data;
@@ -42,22 +42,21 @@ void	pa(t_stack *stack)
 	{
 		temp = stack->head_b;
 		if (!stack->head_b->next)
-		{
 			stack->head_b = NULL;
-			stack->tail_b = NULL;
-		}
 		else
 		{
+			stack->head_b->next->prev = stack->head_b->prev;
 			stack->head_b = stack->head_b->next;
-			stack->head_b->prev = stack->tail_b;
+			stack->head_b->prev->next = stack->head_b;
+
 		}
 		temp->next = stack->head_a;
 		if (stack->head_a)
-			stack->head_a->prev = temp;
+		{
+			temp->prev = stack->head_a->prev;
+			stack->head_a->prev->next = temp;
+		}
 		stack->head_a = temp;
-		stack->head_a->prev = stack->tail_a;
-		if (stack->head_a->next == NULL)
-			stack->tail_a = temp;
 		ft_putstr_fd("pa\n", 1);
 	}
 }
@@ -70,36 +69,29 @@ void	pb(t_stack *stack)
 	{
 		temp = stack->head_a;
 		if (!stack->head_a->next)
-		{
 			stack->head_a = NULL;
-			stack->tail_a = NULL;
-		}
 		else
 		{
+			stack->head_a->next->prev = stack->head_a->prev;
 			stack->head_a = stack->head_a->next;
-			stack->head_a->prev = stack->tail_a;
+			stack->head_a->prev->next = stack->head_a;
 		}
+		if (!stack->head_b)
+			stack->head_b = temp;
 		temp->next = stack->head_b;
-		if (stack->head_b)
-			stack->head_b->prev = temp;
+		stack->head_b->prev->next = temp;
+		temp->prev = stack->head_b->prev;
+		temp->next->prev = temp;
 		stack->head_b = temp;
-		stack->head_b->prev = stack->tail_b;
-		if (stack->head_b->next == NULL)
-			stack->tail_b = temp;
 		ft_putstr_fd("pb\n", 1);
 	}
 }
 
-void	ra_rb(t_node *head, char flag)
+void	ra_rb(t_node **head, char flag)
 {
- 	t_node	*temp;
-
-	if (head && head->prev)
+	if (*head)
 	{
-		head->prev->next = head;
-		temp = head;
-		head = head->next;
-		temp->next = NULL;
+		*head = (*head)->next;
 		if (flag == 'a' || flag == 'b')
 			ft_printf("r%c\n", flag);
 	}

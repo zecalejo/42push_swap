@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/20 23:39:17 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/23 22:17:02 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,10 @@ int	check_error(t_stack *stack)
 		return (0);
 	if (stack->nbr > INT_MAX || stack->nbr < INT_MIN || stack->cnt > 10) 
 		return (1);
-	current = stack->head_a;
-	while (current != NULL)
+	if (stack->head_a->data == stack->nbr)
+		return (1);
+	current = stack->head_a->next;
+	while (current != stack->head_a)
 	{
 		if (current->data == stack->nbr)
 			return (1);

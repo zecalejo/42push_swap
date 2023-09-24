@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 23:18:50 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/21 01:31:06 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/23 18:03:15 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rr(t_stack *stack)
 {
-	ra_rb(stack->head_a, 's');
-	ra_rb(stack->head_b, 's');
+	ra_rb(&stack->head_a, 's');
+	ra_rb(&stack->head_b, 's');
 	ft_putstr_fd("rr\n", 1);
 }
 

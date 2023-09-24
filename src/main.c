@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/21 00:32:12 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/24 00:59:23 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ int	main(int ac, char **av)
 		check_input(av[i], &stack);
 		i++;
 	}
+	print_lst(stack.head_a, "Stack A");
+	print_lst(stack.head_b, "Stack B");
 	pb(&stack);
 	pb(&stack);
 	pb(&stack);
 	print_lst(stack.head_a, "Stack A");
 	print_lst(stack.head_b, "Stack B");
-	printf("\nPREV = %p | TAIL = %p\n\n", stack.head_a->prev, stack.tail_a);
 	// sa_sb(stack.head_a, 'a');
 	// print_lst(stack.head_a, "Stack A");
 	// print_lst(stack.head_b, "Stack B");
@@ -42,7 +43,9 @@ int	main(int ac, char **av)
 	rr(&stack);
 	print_lst(stack.head_a, "Stack A");
 	print_lst(stack.head_b, "Stack B");
-	free_lst(stack.head_a);
-	free_lst(stack.head_b);
+	if (stack.head_a)
+		free_lst(&stack.head_a);
+	if (stack.head_b)
+		free_lst(&stack.head_b);
 	return (0);
 }
