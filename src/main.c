@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 01:16:06 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:02:08 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ int	main(int ac, char **av)
 	print_lst(stack.head_a, "Stack A");
 	print_lst(stack.head_b, "Stack B");
 	pb(&stack);
-	pb(&stack);
-	pb(&stack);
+	// pb(&stack);
+	// pb(&stack);
 	print_lst(stack.head_a, "Stack A");
 	print_lst(stack.head_b, "Stack B");
+	ft_printf("\nlen_a = %d | len_b = %d\n", ps_lstsize(stack.head_a), ps_lstsize(stack.head_b));
 	// sa_sb(stack.head_a, 'a');
 	// print_lst(stack.head_a, "Stack A");
 	// print_lst(stack.head_b, "Stack B");
@@ -40,9 +41,9 @@ int	main(int ac, char **av)
 	// print_lst(stack.head_b, "Stack B");
 	// ss(&stack);
 	// print_stack(&stack);
-	rrr(&stack);
-	print_lst(stack.head_a, "Stack A");
-	print_lst(stack.head_b, "Stack B");
+	// rrr(&stack);
+	// print_lst(stack.head_a, "Stack A");
+	// print_lst(stack.head_b, "Stack B");
 	if (stack.head_a)
 		free_lst(&stack.head_a);
 	if (stack.head_b)

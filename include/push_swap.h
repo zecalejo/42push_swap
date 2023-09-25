@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 01:13:47 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/24 18:06:25 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void	rra_rrb(t_node **head, char flag);
 void	rrr(t_stack *stack);
 
 int		check_error(t_stack *stack);
+int		ps_lstsize(t_node *head);
 
 #endif

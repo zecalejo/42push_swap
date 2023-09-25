@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 23:05:11 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 01:10:36 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:03:49 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	ss(t_stack *stack)
 	ft_putstr_fd("ss\n", 1);
 }
 
-
 void	pa(t_stack *stack)
 {
 	t_node	*temp;
@@ -48,10 +47,12 @@ void	pa(t_stack *stack)
 			stack->head_b->next->prev = stack->head_b->prev;
 			stack->head_b = stack->head_b->next;
 			stack->head_b->prev->next = stack->head_b;
-
 		}
 		if (!stack->head_a)
+		{
 			stack->head_a = temp;
+			stack->head_a->prev = temp;
+		}
 		temp->next = stack->head_a;
 		stack->head_a->prev->next = temp;
 		temp->prev = stack->head_a->prev;
@@ -77,7 +78,10 @@ void	pb(t_stack *stack)
 			stack->head_a->prev->next = stack->head_a;
 		}
 		if (!stack->head_b)
+		{
 			stack->head_b = temp;
+			stack->head_b->prev = temp;
+		}
 		temp->next = stack->head_b;
 		stack->head_b->prev->next = temp;
 		temp->prev = stack->head_b->prev;

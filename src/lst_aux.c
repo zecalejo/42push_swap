@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 00:27:43 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/25 21:01:46 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,23 @@ void	create_stack(t_stack *stack, int new_val)
 	}
 }
 
+int	ps_lstsize(t_node *head)
+{
+	t_node	*temp;
+	int		len;
+
+	temp = head;
+	len = 0;
+	while (1)
+	{
+		len++;
+		temp = temp->next;
+		if (temp == head)
+			break ;
+	}
+	return (len);
+}
+
 void	print_lst(t_node *head, char *lst_name)
 {
 	t_node	*current;
@@ -44,7 +61,7 @@ void	print_lst(t_node *head, char *lst_name)
 	while (1)
 	{
 		ft_printf("\t%d\t| me = %p | prev = %p | next = %p\n",
-			current->data, current, current->prev, current->next);
+			current->data, head, current->prev, current->next);
 		current = current->next;
 		if (current == head)
 			break ;
@@ -62,8 +79,8 @@ void	free_lst(t_node **head)
 	while (1)
 	{
 		temp = current;
-		current = current->next;
 		free(temp);
+		current = current->next;
 		if (current == *head)
 			break ;
 	}
