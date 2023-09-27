@@ -6,11 +6,24 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 23:02:05 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/25 21:04:12 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:52:23 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	only_spaces(char *str)
+{
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (!ft_isspace(*str))
+			return (0);
+		str++;
+	}
+	return (1);
+}
 
 void	error_exit(t_stack *stack)
 {

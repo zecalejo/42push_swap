@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/25 21:01:46 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 22:43:39 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	create_stack(t_stack *stack, int new_val)
 
 	new = ft_calloc(1, sizeof(t_node));
 	new->data = new_val;
+	new->digits = stack->cnt;
 	if (!stack->head_a)
 	{
 		stack->head_a = new;
@@ -35,16 +36,18 @@ void	create_stack(t_stack *stack, int new_val)
 
 int	ps_lstsize(t_node *head)
 {
-	t_node	*temp;
+	t_node	*current;
 	int		len;
 
-	temp = head;
+	if (!head)
+		return (0);
+	current = head;
 	len = 0;
 	while (1)
 	{
 		len++;
-		temp = temp->next;
-		if (temp == head)
+		current = current->next;
+		if (current == head)
 			break ;
 	}
 	return (len);
@@ -54,14 +57,13 @@ void	print_lst(t_node *head, char *lst_name)
 {
 	t_node	*current;
 
-	ft_printf("    %s\n", lst_name);
+	ft_printf("     %s\n", lst_name);
 	if (!head)
 		return ;
 	current = head;
 	while (1)
 	{
-		ft_printf("\t%d\t| me = %p | prev = %p | next = %p\n",
-			current->data, head, current->prev, current->next);
+		ft_printf("%d\t| cnt = %d\n", current->data, current->digits);
 		current = current->next;
 		if (current == head)
 			break ;
@@ -78,9 +80,9 @@ void	free_lst(t_node **head)
 	current = *head;
 	while (1)
 	{
-		temp = current;
-		free(temp);
-		current = current->next;
+		temp = current->next;
+		free(current);
+		current = temp;
 		if (current == *head)
 			break ;
 	}

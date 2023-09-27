@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/25 21:01:08 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:54:12 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	check_input(char *str, t_stack *stack)
 {
 	stack->sign = 1;
+	if (!str || only_spaces(str))
+		error_exit(stack);
 	while (*str)
 	{
 		stack->nbr = 0;

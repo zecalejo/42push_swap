@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/24 18:06:25 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 21:52:43 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_node {
 	int				data;
 	int				index;
+	int				digits;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -48,5 +49,6 @@ void	rrr(t_stack *stack);
 
 int		check_error(t_stack *stack);
 int		ps_lstsize(t_node *head);
+int		only_spaces(char *str);
 
 #endif
