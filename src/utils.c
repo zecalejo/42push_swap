@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 23:02:05 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/27 21:52:23 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:48:37 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ int	only_spaces(char *str)
 		str++;
 	}
 	return (1);
+}
+
+char	*conv_int(t_stack *stack, char *s)
+{
+	stack->nbr = (stack->nbr * 10) + (*s++ - '0');
+	stack->cnt++;
+	return (s);
 }
 
 void	error_exit(t_stack *stack)

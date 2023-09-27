@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 20:58:51 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/27 21:54:12 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/28 00:26:09 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,10 @@ void	check_input(char *str, t_stack *stack)
 			check_sign(stack, str);
 		else if (*str >= '0' && *str <= '9')
 		{
+			while (*str == '0')
+				str++;
 			while (*str >= '0' && *str <= '9')
-			{
-				stack->nbr = (stack->nbr * 10) + (*str++ - '0');
-				stack->cnt++;
-			}
+				str = conv_int(stack, str);
 			if (check_error(stack))
 				error_exit(stack);
 			create_stack(stack, (stack->nbr * stack->sign));
@@ -60,10 +59,10 @@ int	check_error(t_stack *stack)
 {
 	t_node	*current;
 
-	if (!stack->head_a)
-		return (0);
 	if (stack->nbr > INT_MAX || stack->nbr < INT_MIN || stack->cnt > 10) 
 		return (1);
+	if (!stack->head_a)
+		return (0);
 	if (stack->head_a->data == stack->nbr)
 		return (1);
 	current = stack->head_a->next;

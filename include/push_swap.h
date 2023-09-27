@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/27 21:52:43 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/09/27 23:48:58 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	rrr(t_stack *stack);
 int		check_error(t_stack *stack);
 int		ps_lstsize(t_node *head);
 int		only_spaces(char *str);
+
+char	*conv_int(t_stack *stack, char *s);
 
 #endif
