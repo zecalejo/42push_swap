@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/27 22:43:39 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/11 22:59:06 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ void	create_stack(t_stack *stack, int new_val)
 		stack->head_a->prev->next = stack->head_a;
 	}
 }
+
+void	get_index(t_node **head, int i)
+{
+	t_node	*current;
+
+	current = *head;
+	while (1)
+	{
+		current->index = i;
+		current = current->next;
+		if (current == *head)
+			return ;
+	}
+}
+
 
 int	ps_lstsize(t_node *head)
 {

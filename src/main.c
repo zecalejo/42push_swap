@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:10:29 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/28 00:28:22 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/11 22:44:46 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int	main(int ac, char **av)
 		check_input(av[i], &stack);
 		i++;
 	}
-	print_lst(stack.head_a, "Stack A");
-	print_lst(stack.head_b, "Stack B");
-	pb(&stack);
-	print_lst(stack.head_a, "Stack A");
-	print_lst(stack.head_b, "Stack B");
-	ft_printf("\nlen_a = %d | len_b = %d\n", ps_lstsize(stack.head_a),
-		ps_lstsize(stack.head_b));
+	// print_lst(stack.head_a, "Stack A");
+	// print_lst(stack.head_b, "Stack B");
+	// pb(&stack);
+	// print_lst(stack.head_a, "Stack A");
+	// print_lst(stack.head_b, "Stack B");
+	// ft_printf("\nlen_a = %d | len_b = %d\n", ps_lstsize(stack.head_a),
+	// 	ps_lstsize(stack.head_b));
+	sort(&stack);
 	if (stack.head_a)
 		free_lst(&stack.head_a);
 	if (stack.head_b)

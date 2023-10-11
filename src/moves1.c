@@ -6,21 +6,21 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 23:05:11 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/09/25 21:03:49 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/11 22:41:29 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa_sb(t_node *lst, char flag)
+void	sa_sb(t_node *head, char flag)
 {
 	int	temp;
 
-	if (lst && lst->next)
+	if (head && head->next)
 	{
-		temp = lst->data;
-		lst->data = lst->next->data;
-		lst->next->data = temp;
+		temp = head->data;
+		head->data = head->next->data;
+		head->next->data = temp;
 		if (flag == 'a' || flag == 'b')
 			ft_printf("s%c\n", flag);
 	}
