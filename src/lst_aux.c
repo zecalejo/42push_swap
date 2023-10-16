@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/16 21:50:25 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/17 00:12:36 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	get_index(t_node **head, int i)
 			return ;
 	}
 }
-
 
 int	ps_lstsize(t_node *head)
 {
