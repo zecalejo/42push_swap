@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/11 22:59:06 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:50:25 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	get_index(t_node **head, int i)
 	while (1)
 	{
 		current->index = i;
+		i++;
 		current = current->next;
 		if (current == *head)
 			return ;

@@ -6,7 +6,7 @@
 #    By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/13 18:12:45 by jnuncio-          #+#    #+#              #
-#    Updated: 2023/10/11 23:01:43 by jnuncio-         ###   ########.fr        #
+#    Updated: 2023/10/16 20:58:04 by jnuncio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRC = $(addprefix src/, main.c\
 	moves1.c\
 	moves2.c\
 	sort.c\
-	sort5.c)
+	sort5.c\
+	sort_radix.c)
 OBJ = $(SRC:src/%c=bin/%o)
 
 all: $(LIBFT) $(BIN) $(NAME)

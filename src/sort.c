@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:34:16 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/11 22:50:25 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:10:05 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ void	small_sort(t_node **head, char flag)
 
 void	sort(t_stack *stack)
 {
-	int	lstsize;
+	int	lsize;
 
 	if (!stack)
 		return ;
-	lstsize = ps_lstsize(stack->head_a);
-	if (lstsize <= 3 && !is_sorted(stack->head_a))
+	lsize = ps_lstsize(stack->head_a);
+	if (lsize <= 3 && !is_sorted(stack->head_a))
 		small_sort(&stack->head_a, 'a');
-	if (lstsize <= 5 && !is_sorted(stack->head_a))
+	else if (lsize <= 5 && !is_sorted(stack->head_a))
 		sort_five(stack);
+	else if (lsize > 5 && !is_sorted(stack->head_a))
+		sort_radix(stack);
 }

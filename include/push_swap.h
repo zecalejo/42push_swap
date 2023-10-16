@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/25 17:24:23 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/11 22:59:20 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/16 21:06:32 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,11 @@ void	rrr(t_stack *stack);
 int		smallest_value(t_node *head);
 int		smallest_index(t_node *head);
 int		is_sorted(t_node *head);
+int		find_max_bits(t_node *head);
+void	sort_index(t_node *head);
 void	small_sort(t_node **head, char flag);
 void	sort_five(t_stack *stack);
+void	sort_radix(t_stack *stack);
 void	sort(t_stack *stack);
 
 int		check_error(t_stack *stack);
