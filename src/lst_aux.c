@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 20:07:20 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/17 00:12:36 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/17 19:59:50 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	print_lst(t_node *head, char *lst_name)
 	current = head;
 	while (1)
 	{
-		ft_printf("%d\t| cnt = %d\n", current->data, current->digits);
+		ft_printf("%d\t| prev = %p | curr = %p\n", current->data, current->prev, current);
 		current = current->next;
 		if (current == head)
 			break ;

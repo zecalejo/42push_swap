@@ -6,7 +6,7 @@
 /*   By: jnuncio- <jnuncio-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 19:34:16 by jnuncio-          #+#    #+#             */
-/*   Updated: 2023/10/16 21:10:05 by jnuncio-         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:03:09 by jnuncio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	is_sorted(t_node *head)
 void	small_sort(t_node **head, char flag)
 {
 	if ((*head)->data > (*head)->next->data
-		&& (*head)->next->data > (*head)->prev->data)
+		&& (*head)->data > (*head)->prev->data)
 		ra_rb(head, flag);
 	if ((*head)->next->data > (*head)->data
 		&& (*head)->next->data > (*head)->prev->data)
